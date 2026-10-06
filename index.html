@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica de caracteres y vista adaptable para móviles -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Inventario - Portafolio</title>
+    
+    <!-- Enlace al archivo de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Contenedor principal que centra y agrupa toda la aplicación -->
+    <div class="container">
+        
+        <!-- Encabezado de la página -->
+        <h1>📦 Control de Inventario</h1>
+        <p class="subtitulo">Proyecto interactivo desarrollado con HTML, CSS y JavaScript</p>
+
+        <!-- Formulario para ingresar nuevos datos -->
+        <!-- Usamos un formulario para aprovechar la validación nativa del navegador -->
+        <form id="formularioInventario">
+            
+            <!-- Campo de texto para el nombre. 'required' impide enviar el formulario si está vacío -->
+            <div class="campo">
+                <label for="nombre">Producto:</label>
+                <input type="text" id="nombre" placeholder="Ej. Teclado Mecánico" required>
+            </div>
+
+            <!-- Campo numérico para el precio -->
+            <div class="campo">
+                <label for="precio">Precio (₡):</label>
+                <input type="number" id="precio" placeholder="Ej. 15000" min="1" step="any" required>
+            </div>
+
+            <!-- Campo numérico para la cantidad en stock -->
+            <div class="campo">
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" placeholder="Ej. 5" min="1" required>
+            </div>
+
+            <!-- Botón tipo submit para desencadenar el evento en JavaScript -->
+            <button type="submit" id="btnAgregar">Agregar Producto</button>
+        </form>
+
+        <!-- Tabla estructurada donde se renderizarán los datos guardados -->
+        <table>
+            <!-- Encabezados de las columnas -->
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio Unitario</th>
+                    <th>Cantidad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            
+            <!-- Cuerpo de la tabla: JavaScript insertará las filas (<tr>) dinámicamente aquí -->
+            <tbody id="tablaProductos">
+                <!-- Se llena con script.js -->
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- Enlace al archivo de lógica JavaScript (se coloca al final para asegurar que el HTML cargue primero) -->
+    <script src="script.js"></script>
+</body>
+</html>
